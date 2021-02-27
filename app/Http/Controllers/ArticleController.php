@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-
     /**
      * DOTO
      * получение данных перенести в сервис
@@ -22,8 +21,6 @@ class ArticleController extends Controller
      * наладить админку
      * переписать на коллекции, отказаться от массивов
      **/
-
-
     /**
      * Create a new controller instance.
      *

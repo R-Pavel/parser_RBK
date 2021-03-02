@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 Route::get('/articles','ArticleController@index');
 Route::get('/articles_list','ArticleController@showArticles');
+Route::get('/articles_l','ArticleController@showArticles');
 
 Route::get('/home', 'HomeController@index')->name('home');

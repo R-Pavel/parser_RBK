@@ -15,9 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('main');
 Route::get('/articles','ArticleController@index');
 Route::get('/articles_list','ArticleController@showArticles');
-Route::get('/articles_l','ArticleController@showArticles');
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('products', function(){
+    return 'This is a list of products';
+})->name('products.index');
+Route::get('products/create', function(){
+    return 'A form to create a product';
+})->name('products.create');
+Route::get('products', function(){
+
+})->name('products.store');
+Route::get('products/{product}',function($product){
+    return "Showing product {$product}";
+});

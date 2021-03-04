@@ -25,3 +25,9 @@ Route::get('products', function(){
 Route::get('products/create', function(){
     return 'A form to create a product';
 })->name('products.create');
+Route::get('products', function(){
+
+})->name('products.store');
+Route::get('products/{product}',function($product){
+    return "Showing product {$product}";
+});

@@ -16,18 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('main');
-Route::get('/articles','ArticleController@index');
-Route::get('/articles_list','ArticleController@showArticles');
+Route::get('/articles', 'ArticleController@index');
+Route::get('/articles_list', 'ArticleController@showArticles');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('products', function(){
-    return 'This is a list of products';
-})->name('products.index');
-Route::get('products/create', function(){
-    return 'A form to create a product';
-})->name('products.create');
-Route::get('products', function(){
 
-})->name('products.store');
-Route::get('products/{product}',function($product){
-    return "Showing product {$product}";
-});
+Route::get('products','ProductController@index')->name('products.index');
+Route::get('products/create', 'ProductController@create')->name('products.create');
+Route::get('products/{product}', 'ProductController@show')->name('products.show');
+Route::post('products', 'ProductController@store')->name('products.store');
+Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit');
+Route::match(['put', 'patch'], 'products/{product}', 'ProductController@update')->name('products.update');
+Route::delete('products/{product}', 'ProductController@destroy')->name('products.destroy');

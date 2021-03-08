@@ -3,31 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public function index()
     {
         $products = Product::all();
-        dd($products);
-        return view('products.index');
+        return view('products.index')->with([
+            'products' => $products
+        ]);
     }
 
     public function create()
     {
-        return 'This is the form to create product From Controller';
+        return view('products.create');
     }
 
     public function show($product)
     {
         $product = Product::findOrFail($product);
-        return view('products.show')->with(['product' => $product]);
+        return view('products.show')->with([
+            'product' => $product,
+        ]);
     }
 
     public function store()
     {
-        //
+        return Product::create(request()->all());
     }
 
     public function edit($product)

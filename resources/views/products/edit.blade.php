@@ -6,7 +6,7 @@
         @method('PUT')
         <div class="form-row">
             <label>Title</label>
-            <input class="form-control" type="text" name="title" value="{{$product->title}}" required>
+            <input class="form-control" type="text" name="title" value="{{$product->title}}">
         </div>
         <div class="form-row">
             <label>Descripton</label>
@@ -14,7 +14,7 @@
         </div>
         <div class="form-row">
             <label>Price</label>
-            <input class="form-control" type="number" min="1.0" step="0.01"  name="price" value="{{$product->price}}" required>
+            <input class="form-control" type="number" min="1.0" step="0.01"  name="price" value="{{$product->price}}">
         </div>
         <div class="form-row">
             <label>Stock</label>

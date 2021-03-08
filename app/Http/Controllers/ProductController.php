@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Product;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public function index()
     {
+        $products = Product::all();
+        dd($products);
         return view('products.index');
     }
 
@@ -18,7 +21,8 @@ class ProductController extends Controller
 
     public function show($product)
     {
-        return view('products.show');
+        $product = Product::findOrFail($product);
+        return view('products.show')->with(['product' => $product]);
     }
 
     public function store()

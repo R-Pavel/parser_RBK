@@ -37,14 +37,16 @@ class ProductController extends Controller
             'status' => ['required','in:available,unavailable'],
         ];
         request()->validate($rules);
-        $product = Product::create(request()->all());
         if (request()->stock == 0 && request()->status == 'available') {
-            session()->flash('error', 'The product must have stock');
-            return redirect()->back();
+            return redirect()
+                ->back()
+                ->withInput(request()->all())
+                ->withErrors('The product must have stock');
         }
-
-        session()->forget('error');
-        return redirect()->route('products.index');
+        $product = Product::create(request()->all());
+        session()->flash('success',"NEW product with id {$product->id} was created");
+        return redirect()->route('products.index')
+            ->withSuccess("New product with id {$product->id} was created");
     }
 
     public function edit($product)
@@ -64,7 +66,8 @@ class ProductController extends Controller
         request()->validate($rules);
         $product = Product::findOrFail($product);
         $product->update(request()->all());
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')
+            ->withSuccess("The product with id {$product->id} was updated");
 
     }
 

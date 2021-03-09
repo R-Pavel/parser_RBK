@@ -5,10 +5,18 @@
     <title>Document</title>
 </head>
 <body>
-@dump($errors)
-@if(session()->has('error'))
+@if(isset($errors) && $errors->any())
     <div class="alert alert-danger">
-        {{session()->get('error')}}
+        <ul>
+           @foreach($errors->all() as $item)
+                <li>{{$item}}</li>
+           @endforeach
+        </ul>
+    </div>
+@endif
+@if(session()->has('success'))
+    <div class="alert alert-success">
+        {{session()->get('success')}}
     </div>
 @endif
 @yield('content')

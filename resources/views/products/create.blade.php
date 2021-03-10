@@ -29,7 +29,7 @@
             </select>
         </div>
         <div class="form-row">
-            <button class="btn btn-primary bt-lg" type="submit">Create product</button>
+            <button class="btn btn-primary bt-lg mt-3" type="submit">Create product</button>
         </div>
     </form>
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<h1>Create new product</h1>
+<h1>Edit product</h1>
     <form method="POST" action="{{ route('products.update',['product' => $product->id]) }}">
         @csrf
         @method('PUT')
@@ -28,7 +28,7 @@
             </select>
         </div>
         <div class="form-row">
-            <button class="btn btn-primary bt-lg" type="submit">Create product</button>
+            <button class="btn btn-primary bt-lg mt-3" type="submit">Edit product</button>
         </div>
     </form>
 @endsection

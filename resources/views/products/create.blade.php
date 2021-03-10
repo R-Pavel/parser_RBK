@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
     <h1>Create new product</h1>
     <form method="POST" action="{{route('product.store')}}">

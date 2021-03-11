@@ -1,8 +1,8 @@
 ## About project
 Docker-compose images: 
-###PHP service app
+PHP service app
 (php 7.4, Laravel 7.30)
-###Nginx Service 
+Nginx Service 
 (nginx:alpine)
-###MySQL Service
+MySQL Service
 mysql 5.7.22

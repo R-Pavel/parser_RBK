@@ -18,14 +18,14 @@ Route::get('/articles', 'ArticleController@index');
 Route::get('/articles_list', 'ArticleController@showArticles');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('products','ProductController@index')->name('products.index');
-Route::get('product/create', 'ProductController@create')->name('products.create');
-Route::get('products/{product}', 'ProductController@show')->name('products.show');
-Route::post('products', 'ProductController@store')->name('product.store');
-Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit');
-Route::match(['put', 'patch'], 'products/{product}', 'ProductController@update')->name('products.update');
-Route::delete('products/{product}', 'ProductController@destroy')->name('products.destroy');
-
+//Route::get('products','ProductController@index')->name('products.index');
+//Route::get('product/create', 'ProductController@create')->name('products.create');
+//Route::get('products/{product}', 'ProductController@show')->name('products.show');
+//Route::post('products', 'ProductController@store')->name('product.store');
+//Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit');
+//Route::match(['put', 'patch'], 'products/{product}', 'ProductController@update')->name('products.update');
+//Route::delete('products/{product}', 'ProductController@destroy')->name('products.destroy');
+Route::resource('products','ProductController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

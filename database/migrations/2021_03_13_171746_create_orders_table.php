@@ -17,8 +17,11 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->string('status')->default('pending');
             $table->float('amount')->unsigned();
+            $table->bigInteger('customer_id')->unsigned();
             $table->timestamp('payed_at')->nullable();
             $table->timestamps();
+
+            $table->foreign('customer_id')->references('id')->on('users');
         });
     }
 

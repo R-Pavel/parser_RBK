@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('status')->default('pending');
             $table->float('amount')->unsigned();
             $table->timestamp('payed_at')->nullable();

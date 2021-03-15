@@ -1,4 +1,4 @@
-## About project
+## About the project
 Docker-compose images: 
 PHP service app
 (php 7.4, Laravel 7.30)

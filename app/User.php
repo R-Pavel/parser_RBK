@@ -43,4 +43,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class, 'customer_id');
     }
+
+    public function payments()
+    {
+        return $this->hasManyThrough(Payment::class, Order::class, 'customer_id');
+    }
+    public function image()
+    {
+        return $this->morphOne(Image::class,'imaginable');
+    }
 }

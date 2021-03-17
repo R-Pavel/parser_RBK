@@ -22,4 +22,19 @@ class Product extends Model
     {
         return $this->belongsToMany(Order::class)->withPivot('quantity');
     }
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imaginable');
+    }
+
+    public function scopeAvailable($query)
+    {
+        return $query->where('status', 'available');
+    }
+
+    public function scopeUnavailable($query)
+    {
+        return $query->where('status', 'unavailable');
+    }
+
 }

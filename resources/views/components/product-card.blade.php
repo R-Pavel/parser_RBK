@@ -6,4 +6,12 @@
         <p class="card-text">{{$product->description}}</p>
         <p class="card-text"><strong>{{$product->stock}} left</strong></p>
     </div>
+    <form
+        class="d-inline"
+        method="POST"
+        action="{{route('products.carts.store', ['product' => $product->id])}}"
+    >
+        @csrf
+        <button class="btn btn-success" type="submit">+</button>
+    </form>
 </div>

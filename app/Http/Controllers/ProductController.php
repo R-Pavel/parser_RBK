@@ -55,7 +55,4 @@ class ProductController extends Controller
         $product->delete($product);
         return $product;
     }
-
-
-
 }

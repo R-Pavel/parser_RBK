@@ -12,7 +12,7 @@
             <th>Id</th>
             <th>Title</th>
             <th>Description</th>
-            <th>Proce</th>
+            <th>Price</th>
             <th>Stock</th>
             <th>Status</th>
             <th>Actions</th>
